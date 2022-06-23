@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button>Increase</button>
+    <button>Decrease</button>
+</body>
+</html>
+<script>
+document.querySelector("body>button").addEventListener("click",funInc)
+    document.querySelector("button + button").addEventListener("click",funDec)
+
+    let count =localStorage.getItem("counter") || 0 ;
+    document.querySelector("h1").innerText = count
+    function funInc(){
+        count++
+        document.querySelector("h1").innerText = count
+        localStorage.setItem("counter",count)
+    }
+    function funDec(){
+        count--
+        document.querySelector("h1").innerText = count
+        localStorage.setItem("counter",count)
+    }
+//   let  counter;
+//   if(localStorage.getItem("localCounter") ==null){
+//       counter=0
+//   }
+//   else{
+//    counter= localStorage.getItem("localCounter")
+//   }
+//   console.log(counter)
+
+// document.querySelector("h1+button").addEventListener("click",inc)
+
+// document.querySelector("button+button").addEventListener("click",dec)
+
+// function inc(){
+//     counter++
+// document.querySelector("h1").innerText=counter
+// localStorage.setItem("localCounter",counter)
+// }
+// function dec(){
+// counter--
+// document.querySelector("h1").innerText=counter
+// localStorage.setItem("localCounter",counter)
+</script> 
